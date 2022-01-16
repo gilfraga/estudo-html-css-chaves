@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Notícias do Barrio</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+		<script type="text/javascript">
+			jQuery(window).load(function($){
+				atualizaData();
+			});
+		</script>
+
+</head>
+<body>
+
+	<div class="navigation">
+		<h1>NOTÍCIAS DO BARRIO</h1>
+		<h2>O Jornal do Chaves</h2>
+
+	</div>
+
+	<div class="titulo">
+		<h1 title="Título do Artigo"> Extra! Extra! 15 pessoas enganadas!</h1>
+
+		<h2>E os números vem aumentando de forma crescente. A cada novo enganado, um novo golpe, a situação está fora de controle. O golpista está por aí, pode ser qualquer um. Todo o cuidado é pouco. Quem poderá nos salvar?</h2>
+
+	</div>
+
+	<div class="content">
+
+		<h3>Por Chaves do Oito</h2>
+
+		<h3>Atualizado em: <output id="data" style="font-family: 'arial black', 'avant garde'; font-size: 14px;"></output></h3>
+
+		<a href="#links">Clique para ir para a lista de links</a>
+
+		<img src="img/chaves.jpg" alt="Chaves"> 
+		<figcaption>O primeiro capítulo de El Chavo del Ocho foi transmitido em 1972. O esquete mais antigo que se tem noção é El ropavejero.</figcaption>
+
+		<p>"Não se lembra que eu te vendi um mapa pra procurar um tesouro e você nunca me pagou nada?"<br>"Mas eu não encontrei o tesouro!"<br>"Mas você procurou?"<br>"Sim!"<br>"Pois então! Eu vendi pra você um mapa que servia para procurar tesouros, não para encontrá-los!"<br>"Ah bom, se é assim, sim..."</p>
+
+	</div>
+
+	<div class="assista">
+
+		<h1>Assista abaixo:</h1>
+
+		<video controls><source src="video/15pessoas-enganadas.mp4" type="video/mp4"></video>
+
+		<p><mark>"Ai, que burro. Dá zero pra ele!"</mark></p>
+
+		<img src="img/barrio.png" alt="Chaves"> 
+
+		<br>
+
+		<audio controls>
+  			<source src="audio/isso.mp3" type="audio/mpeg">
+  			Áudio não suportado
+		</audio>
+
+		<h4><i>"Foi sem querer, querendo."</i></h4>
+
+
+		<h5 id="links">Conheça mais sobre o seriado Chaves:</h5>
+
+			<ul>
+				<li><a href="https://www.chavesweb.com/historia-do-chaves.php" class="link">História</a></li>
+				<li><a href="https://www.chavesweb.com/personagens-do-chaves.php" class="link">Personagens</a></li>
+				<li><a href="https://www.chavesweb.com/atores-do-chaves.php" class="link">Atores</a></li>
+				<li><a href="https://www.chavesweb.com/dubladores-do-chaves.php" class="link">Dubladores</a></li>
+				<li><a href="https://www.chavesweb.com/chaves-em-desenho-animado.php" class="link">Desenho Animado</a></li>
+			</ul>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/2i2pOcgNlwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	</div>
+
+</body>
+
+	<script>
+		function atualizaData(){ 
+			var dataAtual = new Date();
+			
+			var vdia = dataAtual.getDate();
+			var vmes = dataAtual.getMonth() + 1;
+			var vano = dataAtual.getFullYear();
+			
+			if (vdia < 10){ vdia = "0" + vdia;}
+			if (vmes < 10){ vmes = "0" + vmes;}
+	
+			dataFormat = vdia + " / " + vmes + " / " + vano;
+		
+			document.getElementById("data").innerHTML = dataFormat;
+			
+			setTimeout("atualizaData()",1000);
+		}
+	</script>	
+
+</html>
